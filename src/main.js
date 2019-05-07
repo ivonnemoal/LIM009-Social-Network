@@ -1,5 +1,9 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+import login from './view/login.js';
 
-myFunction();
+const element = document.getElementById('root');
+
+const pagLogin = login();
+    
+element.appendChild(pagLogin)
