@@ -14,4 +14,9 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+import {changeTmp} from "./router.js"
 
+const init = () => {
+    window.addEventListener("hashchange", () => changeTmp(window.location.hash))
+}
+window.addEventListener("load", init)
