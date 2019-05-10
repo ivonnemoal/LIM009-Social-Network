@@ -8,7 +8,7 @@ import {components} from "./view/components.js";
        
         //case '#/login':
            // { return root.appendChild(components.login()); }
-        case '#/':
+        case '':
             {return root.appendChild(components.login()); }
         case '#/register':
             { return root.appendChild(components.register()); }
@@ -16,11 +16,10 @@ import {components} from "./view/components.js";
     }
 };
 /*
+
 const changeTmp = (hash) => {
     if (hash === '#/' || hash === '' || hash === '#') {
-      return viewTmp('#/signIn');
-    } else if (hash === '#/signIn' || hash === '#/home') {
-      return viewTmp(hash);
+      return viewTmp('#/login');
     } else {
       return viewTmp('#/signIn');
     }

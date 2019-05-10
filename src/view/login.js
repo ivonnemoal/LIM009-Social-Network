@@ -10,6 +10,7 @@ export default () => {
         `
     formularioLogin.innerHTML = formLogin;
     return formularioLogin;
+   
 };
 
 

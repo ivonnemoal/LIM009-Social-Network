@@ -1,6 +1,6 @@
 export default () => {
-    const formularioRegister  = document.createElement("div");
-    const formRegister = `
+    const formRegister  = document.createElement("div");
+    const tmpRegister = `
         <form>
         <input type="email" id="email2" placeholder ="Email"/>
         <input type="password" id="password2" placeholder ="Password"/>
@@ -8,6 +8,6 @@ export default () => {
         <p>Ya tienes una cuenta <span><a href="#/login">Inicia Sesion</a></span></p>
         </form>
         `
-    formularioRegister.innerHTML = formRegister;
-    return formularioRegister;
+    formRegister.innerHTML = tmpRegister;
+    return formRegister;
 };
