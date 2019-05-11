@@ -1,6 +1,8 @@
+import { LogInOnSubmit } from "../view-controller.js";
+
 export default () => {
-    const formularioLogin  = document.createElement("div");
-    const formLogin = `
+    const formLogin  = document.createElement("div");
+    const tmpLogin = `
         <form>
         <input type="email" id="email" placeholder ="Email"/>
         <input type="password" id="password" placeholder ="Password"/>
@@ -8,10 +10,11 @@ export default () => {
         <p>Si no  tienes una cuenta <span><a href="#/register">Registrate</a></span></p>
         </form>
         `
-    formularioLogin.innerHTML = formLogin;
-    return formularioLogin;
+    formLogin.innerHTML = tmpLogin;
    
+    const btnlogIn = form.querySelector('#btn-login');
+    btnlogIn.addEventListener('click', LogInOnSubmit);
+    return formLogin;
+    
 };
 
-
-  
