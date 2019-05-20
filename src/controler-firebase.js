@@ -1,5 +1,3 @@
-import { initRouter } from "./router.js";
-
 /* Registra usuarios nuevos */
 
 export const signUp = (email, password) => {
@@ -13,7 +11,7 @@ export const signUp = (email, password) => {
   
   /* Acceso a usuarios existentes */
 
-export const logIn = (email, password) => {
+export const signIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
     /* Handle Errors here.
     var errorCode = error.code;

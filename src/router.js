@@ -1,30 +1,57 @@
 import {components} from "./view/components.js";
 
- export const changeTmp = (hash) => {
-    const root = document.getElementById('root');
-    root.innerHTML = '';
-
-    switch (hash) {
-       
-        //case '#/login':
-           // { return root.appendChild(components.login()); }
-        case '':
-            {return root.appendChild(components.login()); }
-        case '#/register':
-            { return root.appendChild(components.register()); }
-        
+const changeTmp = (hash) => {
+    if (hash === '' || hash === '#' || hash === '#/') {
+        return viewTmp('#/login');
+    } else if (hash === '#/login' || hash === '#/register' || hash === '#/welcome') {
+        return viewTmp(hash);
+    }else {
+        return viewTmp('#/pgError');
     }
 };
-/*
 
-const changeTmp = (hash) => {
-    if (hash === '#/' || hash === '' || hash === '#') {
-      return viewTmp('#/login');
-    } else {
-      return viewTmp('#/signIn');
+export const viewTmp = (routers) => {
+    const router = routers.substr(2, routers.length - 2)
+    const root = document.getElementById('root');
+      root.innerHTML = '';
+      switch (router) {
+        case 'login' :
+              root.appendChild(components.login());
+              break; 
+        case 'register':
+              root.appendChild(components.register());
+              break; 
+        case 'welcome':
+              root.appendChild(components.welcome());
+              break;
+        default:
+              root.appendChild(components.pgError());              
+              break; 
+    }
+};
+export const initRouter = () => {
+    window.addEventListener('load',changeTmp(window.location.hash))
+    if (('onhashchange' in window)) window.onhashchange = () => changeTmp(window.location.hash)
+}
+/*
+const viewTmp = (routers) => {
+    const router = routers.substr(2, routers.length - 2)
+    const root = document.getElementById('root');
+    root.innerHTML = '';
+    switch (router) {
+      case 'home':
+        getNotes((notes) => {
+          root.innerHTML = '';        
+          root.appendChild(Home(notes));  
+        })
+        break;
+      case 'signIn':
+        root.appendChild(Login());
+        break;
+      default:
+        root.appendChild(Login());
+        break;
     }
   }
-  export const initRouter = () => {
-    window.addEventListener('load', changeTmp(window.location.hash))
-    if (("onhashchange" in window)) window.onhashchange = () => changeTmp(window.location.hash)
-  }  */
+  */
+
