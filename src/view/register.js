@@ -1,4 +1,5 @@
-//import { signUpUser } from './view-controller';
+import {signUpUser} from './view-controller.js';
+
 export default () => {
     const formRegister  = document.createElement("div");
     const tmpRegister = `
@@ -11,8 +12,8 @@ export default () => {
         `
     formRegister.innerHTML = tmpRegister;
 
-    //const btnSignUp = formRegister.querySelector('#btn-signup');
-    //btnSignUp.addEventListener('click', signUpUser);
+    const btnSignUp = formRegister.querySelector('#btn-signup');
+    btnSignUp.addEventListener('click', signUpUser);
 
     return formRegister;
 };

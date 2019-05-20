@@ -1,5 +1,6 @@
 import {components} from "./view/components.js";
 
+
 const changeTmp = (hash) => {
     if (hash === '' || hash === '#' || hash === '#/') {
         return viewTmp('#/login');
