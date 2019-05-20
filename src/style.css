@@ -1,0 +1,22 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
+body{
+    opacity: 1 ;   
+    background-image: url('./imagen/fondo-pantalla.jpg');
+    background-size: cover;
+    background-attachment: fixed;   
+}
+.form {
+    width: 60%;
+    background: grey;
+}
+.align-center{  
+    align-items:center;
+}
+.display-block {
+    display: block;
+}
